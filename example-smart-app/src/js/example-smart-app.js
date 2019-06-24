@@ -21,10 +21,11 @@
                       }
                     }
                   });
+        var meds = smart.patient.api.search({type: 'MedicationOrder'});
 
-        $.when(pt, obv).fail(onError);
+        $.when(pt, obv, meds).fail(onError);
 
-        $.when(pt, obv).done(function(patient, obv) {
+        $.when(pt, obv, meds).done(function(patient, obv, meds) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -35,6 +36,8 @@
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
           }
+
+          var medsList = getMeds(meds);
 
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
@@ -56,6 +59,11 @@
           if (typeof diastolicbp != 'undefined') {
             p.diastolicbp = diastolicbp;
           }
+
+          if (typeof medsList != 'undefined') {
+            p.meds = medsList;
+          }
+
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
@@ -83,6 +91,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      meds: {value: ''}
     };
   }
 
@@ -126,6 +135,8 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#meds').html(p.meds);
+
   };
 
 })(window);
