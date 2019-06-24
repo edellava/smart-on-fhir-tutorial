@@ -103,7 +103,7 @@
       var medRef = entreis.resource.medication.medicationReference;
       formattedMeds.push([medRef, medID, medStatus]);
     })
-
+    return formattedMeds;
   }
 
   function getBloodPressureValue(BPObservations, typeOfPressure) {
