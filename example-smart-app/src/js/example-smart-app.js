@@ -95,6 +95,17 @@
     };
   }
 
+  function getMeds(meds){
+    var formattedMeds = [];
+    meds.data.entry.forEach(function(entries){
+      var medStatus = entries.resource.status;
+      var medID = entries.resource.identifier;
+      var medRef = entreis.resource.medication.medicationReference;
+      formattedMeds.push([medRef, medID, medStatus]);
+    })
+
+  }
+
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
     BPObservations.forEach(function(observation){
