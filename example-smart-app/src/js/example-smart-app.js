@@ -22,7 +22,7 @@
                     }
                   });
         var meds = smart.patient.api.search({type: 'MedicationOrder'});
-        document.write(meds)
+        console.log(meds);
 
         $.when(pt, obv, meds).fail(onError);
 
