@@ -120,8 +120,8 @@ function formatMeds(Meds) {
     $('#lname').html(p.lname);
     $('#gender').html(p.gender);
     $('#birthdate').html(p.birthdate);
-    $('#meds').html(p.meds);
-
+    $('#meds').html(formatMeds(p.meds));
+    $('#activemeds').html(p.meds.length);
   };
 
 })(window);

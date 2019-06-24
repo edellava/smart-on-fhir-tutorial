@@ -11,67 +11,70 @@
       <link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
     -->
   </head>
+
   <body>
+  
     <div id='errors'>
     </div>
+  
     <div id="loading" class="spinner">
       <div class="bounce1"></div>
       <div class="bounce2"></div>
       <div class="bounce3"></div>
     </div>
-    <div id='holder' >
-      <h2>Example-SMART-App</h2>
-
-      <h2>Patient Resource</h2>
-      <table>
-        <tr>
-          <th>First Name:</th>
-          <td id='fname'></td>
-        </tr>
-        <tr>
-          <th>Last Name:</th>
-          <td id='lname'></td>
-        </tr>
-        <tr>
-          <th>Gender:</th>
-          <td id='gender'></td>
-        </tr>
-        <tr>
-          <th>Date of Birth:</th>
-          <td id='birthdate'></td>
-        </tr>
-      </table>
-      <h2>Observation Resource</h2>
-      <table>
-        <tr>
-          <th>Height:</th>
-          <td id='height'></td>
-        </tr>
-        <tr>
-          <th>Systolic Blood Pressure:</th>
-          <td id='systolicbp'></td>
-        </tr>
-        <tr>
-          <th>Diastolic Blood Pressure:</th>
-          <td id='diastolicbp'></td>
-        </tr>
-        <tr>
-          <th>LDL:</th>
-          <td id='ldl'></td>
-        </tr>
-        <tr>
-          <th>HDL:</th>
-          <td id='hdl'></td>
-        </tr> 
-      </table>
-      <h2>Medication Information</h2>
-      <table>
-        <tr>
-          <th>Meds:</th>
-          <td id='meds'></td>
-        </tr>
-      </table>
-    </div>
+  
+    <div id='holder'>
+  
+      <div class="container-fluid">
+        <div class="row content">
+  
+          <div class="col-sm-3 sidenav">
+  
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3>Patient Information</h3>
+              </div>
+              <div class="panel-body">
+                <table class="table">
+                  <tr>
+                    <th>Name:</th>
+                    <td id='fname'></td>
+                  </tr>
+                  <tr>
+                    <th>Gender:</th>
+                    <td id='gender'></td>
+                  </tr>
+                  <tr>
+                    <th>Date of Birth:</th>
+                    <td id='birthdate'></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+  
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3>Medications <span class="badge" id="activemeds"></span></h3>
+              </div>
+              <div class="panel-body" id='meds'>
+  
+              </div>
+            </div>
+  
+          <div class="col-sm-7 text-left" id="tools">
+  
+          </div>
+  
+          <div class="col-sm-2 sidenav" id="sidebar">
+  
+          </div>
+  
+        </div>
+      </div>
+  
+  
+  
+    </div> <!-- HOLDER -->
     <!-- Required JS files to enable this page to embed within an MPage -->
     <!--
       Temporarily disable cerner-smart-embeddable-lib
