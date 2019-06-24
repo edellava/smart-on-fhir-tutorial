@@ -37,8 +37,8 @@
             lname = patient.name[0].family.join(' ');
           }
 
-          var medsList = [];
-          medsList = getMeds(meds);
+          var medsList = meds[0];
+          
 
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
@@ -96,16 +96,16 @@
     };
   }
 
-  function getMeds(meds){
-    var formattedMeds = [];
-    meds.data.entry.forEach(function(entries){
-      var medStatus = entries.resource.status;
-      var medID = entries.resource.identifier;
-      var medRef = entreis.resource.medication.medicationReference;
-      formattedMeds.push([medRef, medID, medStatus]);
-    })
-    return formattedMeds;
-  }
+  // function getMeds(meds){
+  //   var formattedMeds = [];
+  //   meds.data.entry.forEach(function(entries){
+  //     var medStatus = entries.resource.status;
+  //     var medID = entries.resource.identifier;
+  //     var medRef = entreis.resource.medication.medicationReference;
+  //     formattedMeds.push([medRef, medID, medStatus]);
+  //   })
+  //   return formattedMeds;
+  // }
 
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
