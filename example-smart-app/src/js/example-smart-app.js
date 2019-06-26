@@ -99,6 +99,26 @@ function formatMeds(Meds) {
   return formatTable;
 }
 
+function rxnormToNdc(rxnorm){ //input rxnorm, output ndc
+  var ndc;
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://api.fda.gov/drug/ndc.json', true);
+  request.onload = funtion(ndc);
+
+  
+
+  //https://rxnav.nlm.nih.gov/REST/rxcui/213269/ndcs.json //input: rxnorm, output: ndc
+  //                                       ^rxnorm goes there
+
+  return ndc;
+}
+
+function ndcToSchedule(ndc) { //input ndc, output dea schedule
+  var schedule;
+  //https://api.fda.gov/drug/ndc.json?search=product_ndc:ndc //input: ndc, output: dea_schedule
+  return schedule;
+}
+
 
   // function getMeds(meds){
   //   var formattedMeds = [];
