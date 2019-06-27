@@ -1,3 +1,5 @@
+'use strict';
+
 (function(window){
   window.extractData = function() {
     var ret = $.Deferred();
@@ -28,7 +30,7 @@
             lname = patient.name[0].family.join(' ');
           }
 
-          var medsList = meds[0];
+          var medsList = getMeds(meds);
           
 
 
@@ -37,7 +39,6 @@
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
-          p.height = getQuantityValueAndUnit(height[0]);
 
           
 
@@ -124,16 +125,16 @@ function ndcToSchedule(ndc) { //input ndc, output dea schedule
 }
 
 
-  function getMeds(meds){
-    var formattedMeds = [];
-    meds.data.entry.forEach(function(entries){
-      var medStatus = entries.resource.status;
-      var medID = entries.resource.identifier;
-      var medRef = entreis.resource.medication.medicationReference;
-      formattedMeds.push([medRef, medID, medStatus]);
-    })
-    return formattedMeds;
-  }
+  // function getMeds(meds){
+  //   var formattedMeds = [];
+  //   meds.data.entry.forEach(function(entries){
+  //     var medStatus = entries.resource.status;
+  //     var medID = entries.resource.identifier;
+  //     var medRef = entreis.resource.medication.medicationReference;
+  //     formattedMeds.push([medRef, medID, medStatus]);
+  //   })
+  //   return formattedMeds;
+  // }
 
   
 
