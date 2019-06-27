@@ -12,7 +12,7 @@
         var patient = smart.patient;
         var pt = patient.read();
         
-        var meds = smart.patient.api.search({type: 'MedicationOrder'});
+        var meds = smart.patient.api.search({type: 'MedicationRequest'});
 
         $.when(pt, obv, meds).fail(onError);
 
