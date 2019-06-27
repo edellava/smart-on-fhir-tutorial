@@ -16,10 +16,9 @@
         
         var meds = smart.patient.api.search({type: 'MedicationRequest'});
 
-        $.when(pt, obv, meds).fail(onError);
+        $.when(pt, meds).fail(onError);
 
-        $.when(pt, obv, meds).done(function(patient, obv, meds) {
-          var byCodes = smart.byCodes(obv, 'code');
+        $.when(pt, meds).done(function(patient, meds) {
           var gender = patient.gender;
 
           var fname = '';
