@@ -124,16 +124,16 @@ function ndcToSchedule(ndc) { //input ndc, output dea schedule
 }
 
 
-  // function getMeds(meds){
-  //   var formattedMeds = [];
-  //   meds.data.entry.forEach(function(entries){
-  //     var medStatus = entries.resource.status;
-  //     var medID = entries.resource.identifier;
-  //     var medRef = entreis.resource.medication.medicationReference;
-  //     formattedMeds.push([medRef, medID, medStatus]);
-  //   })
-  //   return formattedMeds;
-  // }
+  function getMeds(meds){
+    var formattedMeds = [];
+    meds.data.entry.forEach(function(entries){
+      var medStatus = entries.resource.status;
+      var medID = entries.resource.identifier;
+      var medRef = entreis.resource.medication.medicationReference;
+      formattedMeds.push([medRef, medID, medStatus]);
+    })
+    return formattedMeds;
+  }
 
   
 
