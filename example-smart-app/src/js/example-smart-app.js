@@ -163,10 +163,7 @@ function getMeds(Meds) {
     return b[1] - a[1]
   });
   //console.log(formattedMeds);
-  const keys = Object.keys(formattedMeds)
-  for (const key of keys) {
-    console.log(key)
-  }
+  
 
 
  
